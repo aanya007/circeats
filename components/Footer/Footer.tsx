@@ -7,7 +7,7 @@ const cols = [
     links: [
       { label: "About", href: "/about" },
       { label: "How It Works", href: "/#how" },
-      { label: "Blog", href: "#" },
+      { label: "Blog", href: "/blog" },
     ],
   },
   {
