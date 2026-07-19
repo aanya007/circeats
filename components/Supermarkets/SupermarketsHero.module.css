@@ -1,0 +1,51 @@
+.section {
+  background: var(--off-white);
+  padding: 180px 24px 90px;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin-bottom: 22px;
+}
+
+.h1 {
+  font-size: clamp(44px, 6vw, 88px);
+  margin-bottom: 26px;
+}
+
+.accent {
+  color: var(--brand-orange);
+}
+
+.copy {
+  font-size: 17px;
+  color: var(--gray-600);
+  max-width: 480px;
+  margin-bottom: 34px;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.linkUnderline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--black);
+  padding-bottom: 2px;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 140px 24px 70px;
+  }
+}
