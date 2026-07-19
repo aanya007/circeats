@@ -14,7 +14,7 @@ const cols = [
     title: "Business",
     links: [
       { label: "For Supermarkets", href: "/supermarkets" },
-      { label: "Partners", href: "#" },
+      { label: "Partners", href: "/partners" },
       { label: "Contact", href: "#" },
     ],
   },

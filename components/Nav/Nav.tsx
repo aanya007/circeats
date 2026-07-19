@@ -8,7 +8,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "How It Works", href: "/#how" },
   { label: "For Supermarkets", href: "/supermarkets" },
-  { label: "Partners", href: "#" },
+  { label: "Partners", href: "/partners" },
   { label: "Blog", href: "#" },
 ];
 
