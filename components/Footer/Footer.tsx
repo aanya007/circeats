@@ -15,7 +15,7 @@ const cols = [
     links: [
       { label: "For Supermarkets", href: "/supermarkets" },
       { label: "Partners", href: "/partners" },
-      { label: "Contact", href: "#" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {

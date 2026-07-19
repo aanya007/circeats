@@ -1,0 +1,61 @@
+.section {
+  background: var(--white);
+  padding: 100px 24px;
+}
+
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.grid.inView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 26px;
+}
+
+.card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--gray-600);
+}
+
+.link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--black);
+  padding-bottom: 2px;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid {
+    transform: none;
+    transition: opacity 0.6s ease;
+  }
+}
