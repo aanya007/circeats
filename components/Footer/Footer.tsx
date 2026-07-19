@@ -4,15 +4,27 @@ import styles from "./Footer.module.css";
 const cols = [
   {
     title: "Company",
-    links: ["About", "How It Works", "Blog"],
+    links: [
+      { label: "About", href: "/about" },
+      { label: "How It Works", href: "/#how" },
+      { label: "Blog", href: "#" },
+    ],
   },
   {
     title: "Business",
-    links: ["For Supermarkets", "Partners", "Contact"],
+    links: [
+      { label: "For Supermarkets", href: "/supermarkets" },
+      { label: "Partners", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
   },
   {
     title: "Follow",
-    links: ["Instagram", "LinkedIn", "TikTok"],
+    links: [
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+      { label: "TikTok", href: "#" },
+    ],
   },
 ];
 
@@ -31,12 +43,9 @@ export default function Footer() {
           {cols.map((col) => (
             <div className={styles.col} key={col.title}>
               <h4>{col.title}</h4>
-              {col.links.map((label) => (
-                <a
-                  key={label}
-                  href={label === "For Supermarkets" ? "/supermarkets" : "#"}
-                >
-                  {label}
+              {col.links.map((l) => (
+                <a key={l.label} href={l.href}>
+                  {l.label}
                 </a>
               ))}
             </div>

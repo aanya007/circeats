@@ -5,8 +5,8 @@ import LogoMark from "../ui/LogoMark";
 import styles from "./Nav.module.css";
 
 const links = [
-  { label: "About", href: "#" },
-  { label: "How It Works", href: "#how" },
+  { label: "About", href: "/about" },
+  { label: "How It Works", href: "/#how" },
   { label: "For Supermarkets", href: "/supermarkets" },
   { label: "Partners", href: "#" },
   { label: "Blog", href: "#" },
