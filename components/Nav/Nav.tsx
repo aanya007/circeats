@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LogoMark from "../ui/LogoMark";
+import { useWaitlist } from "../Waitlist/WaitlistContext";
 import styles from "./Nav.module.css";
 
 const links = [
@@ -15,6 +16,7 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { open: openWaitlist } = useWaitlist();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -44,7 +46,9 @@ export default function Nav() {
       </div>
 
       <div className={styles.right}>
-        <button className={styles.navCta}>Join Waitlist</button>
+        <button className={styles.navCta} onClick={openWaitlist}>
+          Join Waitlist
+        </button>
         <button
           className={styles.hamburger}
           aria-label={menuOpen ? "Close menu" : "Open menu"}

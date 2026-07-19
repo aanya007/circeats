@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import Button from "../ui/Button";
+import WaitlistButton from "../Waitlist/WaitlistButton";
 import { useCountUp } from "@/lib/hooks/useCountUp";
 import { pinnedStats, pinnedStatsSource, BigStat } from "@/lib/data/stats";
 import styles from "./PinnedStats.module.css";
@@ -44,7 +44,7 @@ export default function PinnedStats() {
             <BigStatItem key={s.label} stat={s} start={start} />
           ))}
         </div>
-        <Button variant="lime">Join the rescue</Button>
+        <WaitlistButton variant="lime">Join the rescue</WaitlistButton>
         <div className={styles.src}>{pinnedStatsSource}</div>
       </div>
     </div>

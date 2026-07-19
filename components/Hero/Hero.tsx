@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Button from "../ui/Button";
+import WaitlistButton from "../Waitlist/WaitlistButton";
 import FloatingItems from "./FloatingItems";
 import { usePrefersReducedMotion } from "@/lib/hooks/usePrefersReducedMotion";
 import styles from "./Hero.module.css";
@@ -39,7 +39,7 @@ export default function Hero() {
               before they hit the bin.
             </p>
             <div className={styles.ctaRow}>
-              <Button variant="primary">Join Waitlist</Button>
+              <WaitlistButton variant="primary" />
               <a href="/supermarkets" className={styles.linkUnderline}>
                 For Supermarkets →
               </a>

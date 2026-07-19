@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import WaitlistButton from "../Waitlist/WaitlistButton";
 import styles from "./AboutCta.module.css";
 
 export default function AboutCta() {
@@ -11,7 +11,7 @@ export default function AboutCta() {
           when the rescues start.
         </p>
         <div className={styles.ctaRow}>
-          <Button variant="primary">Join Waitlist</Button>
+          <WaitlistButton variant="primary" />
           <a href="/supermarkets" className={styles.linkUnderline}>
             Run a supermarket? →
           </a>

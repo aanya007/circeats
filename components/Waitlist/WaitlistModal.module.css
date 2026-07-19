@@ -1,0 +1,144 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15, 15, 15, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  position: relative;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 44px 40px 36px;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.close:hover {
+  color: var(--black);
+}
+
+.heading {
+  font-size: clamp(26px, 3.4vw, 34px);
+  margin-bottom: 12px;
+}
+
+.accent {
+  color: var(--brand-green);
+}
+
+.copy {
+  font-size: 14.5px;
+  color: var(--gray-600);
+  margin-bottom: 26px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+}
+
+.label em {
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--gray-400);
+}
+
+.field input,
+.field select {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  background: var(--off-white);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brand-green);
+}
+
+.field input::placeholder {
+  color: var(--gray-400);
+}
+
+.error {
+  font-size: 13.5px;
+  color: var(--brand-orange);
+}
+
+.finePrint {
+  font-size: 11.5px;
+  color: var(--gray-400);
+  margin-top: 16px;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.success .copy {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 36px 24px 28px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
