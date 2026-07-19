@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import DemoButton from "../Demo/DemoButton";
 import styles from "./SupermarketsHero.module.css";
 
 export default function SupermarketsHero() {
@@ -19,7 +19,7 @@ export default function SupermarketsHero() {
           zero new logistics.
         </p>
         <div className={styles.ctaRow}>
-          <Button variant="orange">Book a Demo →</Button>
+          <DemoButton />
           <a href="/" className={styles.linkUnderline}>
             For Shoppers →
           </a>

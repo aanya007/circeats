@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useWaitlist } from "../Waitlist/WaitlistContext";
+import { useDemo } from "../Demo/DemoContext";
 import styles from "./ContactChannels.module.css";
 
 const channels = [
@@ -14,7 +15,7 @@ const channels = [
   {
     title: "Supermarkets",
     body: "Want to see your near-expiry stock selling instead of sitting? Book a demo — we'll walk through it with your inventory.",
-    link: { label: "For Supermarkets →", href: "/supermarkets" },
+    link: { label: "Book a demo →", demo: true },
   },
   {
     title: "Partners & press",
@@ -27,6 +28,7 @@ export default function ContactChannels() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
   const { open: openWaitlist } = useWaitlist();
+  const { open: openDemo } = useDemo();
 
   return (
     <section className={styles.section}>
@@ -38,11 +40,11 @@ export default function ContactChannels() {
           <div className={styles.card} key={c.title}>
             <h3>{c.title}</h3>
             <p>{c.body}</p>
-            {"waitlist" in c.link ? (
+            {"waitlist" in c.link || "demo" in c.link ? (
               <button
                 type="button"
                 className={styles.link}
-                onClick={openWaitlist}
+                onClick={"waitlist" in c.link ? openWaitlist : openDemo}
               >
                 {c.link.label}
               </button>

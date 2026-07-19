@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import DemoButton from "../Demo/DemoButton";
 import styles from "./SupermarketTeaser.module.css";
 
 export default function SupermarketTeaser() {
@@ -13,7 +13,7 @@ export default function SupermarketTeaser() {
             from one dashboard.
           </p>
         </div>
-        <Button variant="orange">Book a Demo →</Button>
+        <DemoButton />
       </div>
     </section>
   );

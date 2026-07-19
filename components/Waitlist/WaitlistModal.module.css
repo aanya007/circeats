@@ -91,7 +91,8 @@
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
   font-family: var(--font-inter), sans-serif;
   font-size: 15px;
   color: var(--black);
@@ -103,13 +104,20 @@
 }
 
 .field input:focus,
-.field select:focus {
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--brand-green);
 }
 
-.field input::placeholder {
+.field input::placeholder,
+.field textarea::placeholder {
   color: var(--gray-400);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 72px;
 }
 
 .error {

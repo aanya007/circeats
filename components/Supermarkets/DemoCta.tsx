@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import DemoButton from "../Demo/DemoButton";
 import styles from "./DemoCta.module.css";
 
 export default function DemoCta() {
@@ -10,7 +10,7 @@ export default function DemoCta() {
           A 20-minute walkthrough with your inventory — not a slide deck. We
           set up your first listings live on the call.
         </p>
-        <Button variant="orange">Book a Demo →</Button>
+        <DemoButton />
       </div>
     </section>
   );

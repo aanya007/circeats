@@ -1,5 +1,8 @@
 /**
- * CircEats waitlist → Google Sheet webhook.
+ * CircEats forms → Google Sheet webhook.
+ * Handles both the waitlist form and the "Book a Demo" form in one
+ * deployment: waitlist rows land on the first sheet tab, demo requests
+ * land on a "Demo requests" tab (created automatically).
  *
  * Setup (~5 minutes, one time):
  * 1. Create a Google Sheet (e.g. "CircEats Waitlist").
@@ -35,33 +38,79 @@ function doPost(e) {
       return json_({ error: "Unauthorized" });
     }
 
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Timestamp", "Name", "Email", "Postal code", "Role"]);
+    if (data.form === "demo") {
+      return handleDemo_(data);
     }
-
-    var email = String(data.email || "").toLowerCase();
-    var existing = sheet
-      .createTextFinder(email)
-      .matchEntireCell(true)
-      .findNext();
-    if (existing) {
-      return json_({ status: "already" });
-    }
-
-    sheet.appendRow([
-      new Date(),
-      String(data.name || ""),
-      email,
-      String(data.postalCode || ""),
-      String(data.role || ""),
-    ]);
-    return json_({ status: "joined" });
+    return handleWaitlist_(data);
   } catch (err) {
     return json_({ error: String(err) });
   } finally {
     lock.releaseLock();
   }
+}
+
+function handleWaitlist_(data) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(["Timestamp", "Name", "Email", "Postal code", "Role"]);
+  }
+
+  var email = String(data.email || "").toLowerCase();
+  var existing = sheet
+    .createTextFinder(email)
+    .matchEntireCell(true)
+    .findNext();
+  if (existing) {
+    return json_({ status: "already" });
+  }
+
+  sheet.appendRow([
+    new Date(),
+    String(data.name || ""),
+    email,
+    String(data.postalCode || ""),
+    String(data.role || ""),
+  ]);
+  return json_({ status: "joined" });
+}
+
+function handleDemo_(data) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Demo requests");
+  if (!sheet) {
+    sheet = ss.insertSheet("Demo requests");
+  }
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      "Timestamp",
+      "Name",
+      "Email",
+      "Supermarket / chain",
+      "Outlets",
+      "Phone",
+      "Notes",
+    ]);
+  }
+
+  var email = String(data.email || "").toLowerCase();
+  var existing = sheet
+    .createTextFinder(email)
+    .matchEntireCell(true)
+    .findNext();
+  if (existing) {
+    return json_({ status: "already" });
+  }
+
+  sheet.appendRow([
+    new Date(),
+    String(data.name || ""),
+    email,
+    String(data.company || ""),
+    String(data.outlets || ""),
+    String(data.phone || ""),
+    String(data.notes || ""),
+  ]);
+  return json_({ status: "booked" });
 }
 
 function json_(obj) {

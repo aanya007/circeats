@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import Button from "../ui/Button";
+import DemoButton from "../Demo/DemoButton";
 import styles from "./PartnerCta.module.css";
 
 export default function PartnerCta() {
@@ -24,7 +24,7 @@ export default function PartnerCta() {
           If your organisation touches food, community, or sustainability in
           Singapore, there&apos;s a place for you in the circle.
         </p>
-        <Button variant="lime">Partner With Us →</Button>
+        <DemoButton variant="lime">Partner With Us →</DemoButton>
       </div>
     </section>
   );
