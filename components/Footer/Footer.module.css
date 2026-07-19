@@ -1,0 +1,78 @@
+.footer {
+  background: var(--black);
+  color: var(--gray-400);
+  padding: 60px 40px 28px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoText {
+  font-family: var(--font-grotesk), sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.tagline {
+  font-size: 13px;
+  margin-top: 8px;
+  color: var(--gray-400);
+}
+
+.cols {
+  display: flex;
+  gap: 60px;
+}
+
+.col h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.col a {
+  display: block;
+  font-size: 13.5px;
+  color: var(--gray-400);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+
+.col a:hover {
+  color: var(--brand-lime);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11.5px;
+  color: var(--gray-600);
+}
+
+@media (max-width: 860px) {
+  .top {
+    flex-direction: column;
+  }
+}

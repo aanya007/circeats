@@ -1,0 +1,68 @@
+.pinWrapper {
+  height: 160vh;
+  position: relative;
+  background: var(--black);
+}
+
+.pinContent {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  padding: 0 24px;
+}
+
+.eyebrow {
+  color: var(--gray-400);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.statsRow {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.bigStat {
+  text-align: center;
+}
+
+.num {
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: 1;
+}
+
+/* "=" sits on the math axis, lower than the digits' optical center — nudge up */
+.eqPrefix {
+  display: inline-block;
+  transform: translateY(-0.08em);
+  margin-right: 0.04em;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-top: 12px;
+  max-width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.src {
+  font-size: 11px;
+  color: var(--gray-600);
+  margin-top: 28px;
+}
+
+@media (max-width: 860px) {
+  .statsRow {
+    gap: 32px;
+  }
+}

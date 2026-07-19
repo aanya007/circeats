@@ -1,0 +1,29 @@
+.strip {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 22px 24px;
+  border-top: 1px solid var(--border-hairline);
+  background: var(--off-white);
+}
+
+.statMini {
+  text-align: center;
+}
+
+.num {
+  font-size: 20px;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--gray-600);
+  margin-top: 2px;
+}
+
+@media (max-width: 860px) {
+  .strip {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}

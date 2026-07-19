@@ -1,0 +1,59 @@
+.darkSection {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 24px;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: clamp(34px, 5.5vw, 64px);
+  color: var(--white);
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: scale(0.94) translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.heading.inView {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.strike {
+  text-decoration: line-through;
+  text-decoration-color: var(--brand-orange);
+  text-decoration-thickness: 3px;
+  opacity: 0.5;
+}
+
+.lime {
+  color: var(--brand-lime);
+}
+
+.para {
+  font-size: 17px;
+  color: var(--gray-400);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.para.inView {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heading,
+  .para {
+    transform: none;
+    transition: opacity 0.8s ease;
+  }
+}

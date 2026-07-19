@@ -1,0 +1,126 @@
+.section {
+  padding: 120px 0 100px;
+  background: var(--off-white);
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 10vw 30px;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  scroll-snap-align: center;
+  flex: 0 0 260px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-hairline);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.35s ease, box-shadow 0.35s ease;
+  transform: scale(0.92);
+  opacity: 0.6;
+  position: relative;
+  cursor: grab;
+}
+
+.isActive {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.discountBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--brand-lime);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: var(--font-grotesk), sans-serif;
+}
+
+.visual {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.visual svg {
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.12));
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.priceNew {
+  font-family: var(--font-grotesk), sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--brand-green);
+}
+
+.priceOld {
+  font-size: 13px;
+  color: var(--gray-400);
+  text-decoration: line-through;
+}
+
+.expiry {
+  font-size: 11px;
+  color: var(--gray-600);
+  margin-top: 6px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  transition: background 0.25s ease, width 0.25s ease;
+}
+
+.dotActive {
+  background: var(--black);
+  width: 20px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+  }
+}
